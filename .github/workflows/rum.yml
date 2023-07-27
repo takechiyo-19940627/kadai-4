@@ -1,0 +1,8 @@
+name: test-schell-script
+on: [push]
+jobs:
+  check-bash-version:
+    runs-on: ubuntu-lastest
+    steps:
+     - run: echo "furst actions!"
+
