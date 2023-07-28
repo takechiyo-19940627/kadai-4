@@ -5,5 +5,5 @@ jobs:
     runs-on: ubuntu-lastest
     timeout-minutes: 10
     steps:
-     - run: echo "first actions!"
+      - run: echo "first actions!"
 
