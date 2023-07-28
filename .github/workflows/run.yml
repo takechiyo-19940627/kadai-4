@@ -3,6 +3,7 @@ on: [push]
 jobs:
   check-bash-version:
     runs-on: ubuntu-lastest
+    timeout-minutes: 10
     steps:
-     - run: echo "furst actions!"
+     - run: echo "first actions!"
 
