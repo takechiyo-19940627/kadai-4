@@ -2,7 +2,7 @@ name: test-schell-script
 on: [push]
 jobs:
   check-bash-version:
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - name: Checkout
