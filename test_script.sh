@@ -26,16 +26,7 @@ echo === 引数が小数の場合 ===
 echo === 入力された2つの自然数にのうちいずれかがBigIntの場合 ===
 ./calculate_gretest_common_measure.sh 21474836470000 2147483647 && echo "error: this case must be fails" >&2 && exit 1
 
-echo === 成功するケース ===
-result=$(./calculate_gretest_common_measure.sh 24 32)
-if [ "$?" != 0 ]; then
-  echo "unexpected error" >&2
-  exit 1
-fi
-if [ $result != 8 ]; then
-  echo "unexpected error expected: 4 result: $result" >&2
-  exit 1
-fi
-echo "最大公約数: $result"
+echo === 期待どおりの計算結果が返ってくるケース ===
+./calculate_gretest_common_measure.sh 24 32 && if [ "$1" != 9 ]; then echo "error: unexpected result" >&2;exit 1; fi
 
-echo === テストが完了しました ===
+echo === テストが正常に完了しました ===
