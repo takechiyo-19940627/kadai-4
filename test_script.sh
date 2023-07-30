@@ -3,7 +3,7 @@
 echo === テストを実行します ===
 
 echo ===引数が1つもないケース ===
-./calculate_gretest_common_measure.sh 1 2 && echo "error: this case must be fails" >&2 && exit 1
+./calculate_gretest_common_measure.sh && echo "error: this case must be fails" >&2 && exit 1
 
 echo === 引数が自然数かつ1つだけ渡されている場合 ===
 ./calculate_gretest_common_measure.sh 1  && echo "error: this case must be fails" >&2 && exit 1
