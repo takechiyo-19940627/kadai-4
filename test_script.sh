@@ -2,8 +2,7 @@
 
 echo === テストを実行します ===
 
-echo 引数が1つもないケース ===
-
+echo ===引数が1つもないケース ===
 ./calculate_gretest_common_measure.sh
 if [ "$?" = 0 ]; then
   echo 'unexpected error' >&2
