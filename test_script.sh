@@ -27,6 +27,6 @@ echo === 入力された2つの自然数にのうちいずれかがBigIntの場�
 ./calculate_gretest_common_measure.sh 21474836470000 2147483647 && echo "error: this case must be fails" >&2 && exit 1
 
 echo === 期待どおりの計算結果が返ってくるケース ===
-./calculate_gretest_common_measure.sh 24 32 && if [ "$1" != 9 ]; then echo "error: unexpected result" >&2;exit 1; fi
+./calculate_gretest_common_measure.sh 24 32 && if [ "$1" != 8 ]; then echo "error: unexpected result" >&2;exit 1; fi
 
 echo === テストが正常に完了しました ===
