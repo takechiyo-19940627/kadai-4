@@ -5,7 +5,7 @@ num2=$2
 
 # TODO: 入力値のテストを行う(自然数じゃないケースなど)
 
-getCommon() {
+get_common_measure() {
   arr=()
   for i in `seq $1 -1 1`
   do
@@ -17,8 +17,8 @@ getCommon() {
   echo ${arr[@]}
 }
 
-common1=$(getCommon $num1)
-common2=$(getCommon $num2)
+common1=$(get_common_measure $num1)
+common2=$(get_common_measure $num2)
 
 for c1 in $common1
 do
