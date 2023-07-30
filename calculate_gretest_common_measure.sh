@@ -26,8 +26,15 @@ validate_args_count() {
   fi
 }
 
-validate_args_count $#
+validate_args_type() {
+  if [[ ! $1 =~ ^[0-9]+$ ]] ||  [[ ! $2 =~ ^[0-9]+$  ]]; then
+    echo 'type is invalid. please input natural number' >&2
+    exit 1
+  fi
+}
 
+validate_args_count $#
+validate_args_type $1 $2
 
 common1=$(get_common_measure $1)
 common2=$(get_common_measure $2)
@@ -43,5 +50,6 @@ do
   done
 done
 
+echo 'common measure does not exist'
 exit 1
 
