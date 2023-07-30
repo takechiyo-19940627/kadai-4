@@ -26,9 +26,9 @@ echo === 引数が小数の場合 ===
 echo === 入力された2つの自然数にのうちいずれかがBigIntの場合 ===
 ./calculate_gretest_common_measure.sh 21474836470000 2147483647 && echo "error: this case must be fails" >&2 && exit 1
 
-echo === 期待どおりの計算結果が返ってくるケース ===
+echo === 期待どおりの計算結果（最大公約数が8）が返ってくるケース ===
 result=$(./calculate_gretest_common_measure.sh 24 32)
-if [ "$result" != 9 ]; then
+if [ "$result" != 8 ]; then
   echo "error: unexpected result"
   exit 1
 else
