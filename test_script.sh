@@ -35,3 +35,9 @@ echo === 入力された2つの自然数にのうちいずれかがBigIntの場�
 ./calculate_gretest_common_measure.sh 21474836470000 2147483647
 echo
 
+echo === 成功するケース ===
+./calculate_gretest_common_measure.sh 2488132 6444
+echo
+
+echo === テストが完了しました ===
+
