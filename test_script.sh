@@ -6,13 +6,15 @@ echo ===引数が1つもないケース ===
 ./calculate_gretest_common_measure.sh
 if [ "$?" = 0 ]; then
   echo 'unexpected error' >&2
+  exit 1
 fi
 echo
 
 echo === 引数が自然数かつ1つだけ渡されている場合 ===
-./calculate_gretest_common_measure.sh 1
+./calculate_gretest_common_measure.sh 1 2
 if [ "$?" = 0 ]; then
   echo 'unexpected error' >&2
+  exit
 fi
 echo
 
@@ -20,6 +22,7 @@ echo === 引数が自然数かつ3つ渡されている場合 ===
 ./calculate_gretest_common_measure.sh 1 2 3
 if [ "$?" = 0 ]; then
   echo 'unexpected error' >&2
+  exit 1
 fi 
 echo
 
@@ -27,6 +30,7 @@ echo === 引数が自然数であるが、コンマで区切っている場合 =
 ./calculate_gretest_common_measure.sh 1,000 100
 if [ "$?" = 0 ]; then
   echo 'unexpected error' >&2
+  exit 1
 fi 
 echo
 
@@ -34,6 +38,7 @@ echo === 引数が文字列の場合 ===
 ./calculate_gretest_common_measure.sh 数字 数字
 if [ "$?" = 0 ]; then
   echo 'unexpected error' >&2
+  exit 1
 fi
 echo
 
@@ -41,6 +46,7 @@ echo === 引数が負の整数の場合 ===
 ./calculate_gretest_common_measure.sh -10 -2
 if [ "$?" = 0 ]; then
   echo 'unexpected error' >&2
+  exit 1
 fi
 echo
 
@@ -48,6 +54,7 @@ echo === 引数が小数の場合 ===
 ./calculate_gretest_common_measure.sh 0.4 0.8
 if [ "$?" = 0 ]; then
   echo 'unexpected error' >&2
+  exit 1
 fi
 echo
 
