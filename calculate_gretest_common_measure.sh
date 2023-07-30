@@ -17,8 +17,23 @@ get_common_measure() {
   echo ${arr[@]}
 }
 
-common1=$(get_common_measure $num1)
-common2=$(get_common_measure $num2)
+validate_args_count() {
+  if [ $1 -lt 2 ]; then
+   echo "too few argument exptected: 2, found: $1" >&2
+   exit 1
+  fi
+
+  if [ $1 -gt 2 ]; then
+   echo "too many argument exptected: 2, found: $1" >&2
+   exit 1
+  fi
+}
+
+validate_args_count $#
+
+
+common1=$(get_common_measure $1)
+common2=$(get_common_measure $2)
 
 for c1 in $common1
 do
