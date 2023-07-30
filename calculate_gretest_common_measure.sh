@@ -1,8 +1,5 @@
 #!/bin/bash
 
-num1=$1
-num2=$2
-
 # TODO: 入力値のテストを行う(自然数じゃないケースなど)
 
 get_common_measure() {
@@ -47,3 +44,4 @@ do
 done
 
 exit 1
+
