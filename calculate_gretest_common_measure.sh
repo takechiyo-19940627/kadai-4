@@ -1,19 +1,5 @@
 #!/bin/bash
 
-# TODO: 入力値のテストを行う(自然数じゃないケースなど)
-
-get_common_measure() {
-  arr=()
-  for i in `seq $1 -1 1`
-  do
-    if [ $(( $1 % $i )) = 0 ]; then
-      arr+=($i)
-    fi
-  done
-
-  echo ${arr[@]}
-}
-
 validate_args_count() {
   if [ $1 -lt 2 ]; then
    echo "too few argument exptected: 2, found: $1" >&2
@@ -33,23 +19,38 @@ validate_args_type() {
   fi
 }
 
+validate_arg_size() {
+  # サイズが大きすぎると計算量が増えるので、int型に絞る
+  max_int=2147483647
+  if [ $1 -gt $max_int ] || [ $2 -gt $max_int ]; then
+    echo 'invalid int size.'
+    exit 1
+  fi
+}
+
 validate_args_count $#
 validate_args_type $1 $2
+validate_arg_size $1 $2
 
-common1=$(get_common_measure $1)
-common2=$(get_common_measure $2)
-
-for c1 in $common1
+for num1 in `seq $1 -1 1`
 do
-  for c2 in $common2
+  if [ $(( $1 % $num1 )) != 0 ]; then
+    continue
+  fi
+
+  for num2 in `seq $2 -1 1`
   do
-   if [ $c1 = $c2 ]; then
-     echo $c1
-     exit 0
-   fi
+    if [ $(( $2 % $num2 )) != 0 ]; then
+      continue
+    fi
+    
+    if [ $num1 = $num2 ]; then
+      echo $num1
+      exit 0
+    fi
   done
 done
 
-echo 'common measure does not exist'
+echo 'unexptected error'
 exit 1
 
