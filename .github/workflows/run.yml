@@ -1,12 +1,15 @@
 name: test-schell-script
 on: [push]
 jobs:
-  check-bash-version:
+  test-bash-script:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: action
-        run: echo "first action!"
-
+      - name: Add Permission To Main Script
+        run: chmod +x calculate_gretest_common_measure.sh
+      - name: Add Permission To Test Script
+        run: chmod +x text_script.sh
+      - name: Run Test
+        run: ./test_script.sh
