@@ -1,4 +1,4 @@
-name: test-schell-script
+name: test-shell-script
 on: [push]
 jobs:
   test-bash-script:
